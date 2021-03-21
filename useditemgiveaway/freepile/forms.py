@@ -1,5 +1,5 @@
 from django import forms 
-from .models import Items, Comments 
+from .models import Item, Comment
 
 class ItemForm(forms.ModelForm):
     class Meta: 

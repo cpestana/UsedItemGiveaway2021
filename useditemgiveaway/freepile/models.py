@@ -3,7 +3,7 @@ from  django.contrib.auth.models import User
 
 # Create your models here.
 # Each model will become a table in the database
-class Items(models.Model):
+class Item(models.Model):
     itemName = models.CharField(max_length=255)
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     itemLocation=models.TextField()
@@ -17,7 +17,7 @@ class Items(models.Model):
     class Meta:
         db_table='item'
     
-class Comments(models.Model):
+class Comment(models.Model):
     commentTitle=models.CharField(max_length=255)
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     entryDate=models.DateField()

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Items, Comments
+from .models import Item, Comment
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 
@@ -8,11 +8,11 @@ from django.urls import reverse_lazy
 def index(request):
     return render(request, 'freepile/index.html')
 
-def getItems(request, id):
+def getItem(request, id):
     Items_list=get_object_or_404(Items, pk=id)
     return render(request, 'freepile/Item.html', {'Items_list': Items_list} )
 
-def getComments(request, id):
+def getComment(request, id):
     Comments_list=Comments.objects.all()
     return render(request, 'freepile/Comment.html', {'Comments_list': Comments_list})
 
