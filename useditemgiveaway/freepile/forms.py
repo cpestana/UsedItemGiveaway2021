@@ -3,10 +3,10 @@ from .models import Item, Comment
 
 class ItemForm(forms.ModelForm):
     class Meta: 
-        model=Items
+        model=Item
         fields='__all__'
 
 class CommentForm(forms.ModelForm):
     class Meta:
-        model=Comments
+        model=Comment
         fields='__all__'
