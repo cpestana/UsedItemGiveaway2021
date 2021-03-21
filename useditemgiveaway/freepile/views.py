@@ -15,3 +15,41 @@ def getItems(request, id):
 def getComments(request, id):
     Comments_list=Comments.objects.all()
     return render(request, 'freepile/comments.html', {'Comments_list': Comments_list})
+
+@login_required
+def newitem(request):
+     form=ItemForm
+
+     if request.method=='POST':
+          form=ItemForm(request.POST)
+
+          if form.is_valid():
+               post=form.save(commit=True)
+               post.save()
+               form=ItemForm()
+     else:
+          form=ItemForm()
+
+     return render(request, 'freepile/newitem.html', {'form': form})
+
+def newcomment(request):
+    form=CommentForm
+
+    if request.method=='POST':
+        form=CommentForm(request.POST)
+
+        if form.is_valid():
+            post=form.save(commit=True)
+            post.save()
+            form=CommentForm()
+    else: 
+        form=CommentForm()
+
+    return render(request, 'freepile/newcomment.html', {'form': form})
+
+def loginmessage(request):
+    return render(request, 'freepile/loginmessage.html')
+
+def logoutmessage(request):
+    return render(request, 'freepile/logoutmessage.html')
+

@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% block content %}
+<h2> Items </h2>
+<table class='table'>
+    <tr>
+        <th>Item Title</th>
+        <th>Description</th>
+    </tr>
+ {% for I in Items_list %}
+    
+ <tr>
+ <td><a href="{% url 'Item' id=m.id %}">{{ i.itemName }}</a></td>
+ <td>{{ i.itemDescription }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

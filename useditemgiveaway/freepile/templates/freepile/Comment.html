@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% block content %}
+<h2> Comments</h2>
+<table class='table'>
+<tr>
+    <th>Comment Subject</th>
+    <th>Comment Description</th>
+</tr>
+    {% for C in Comments_list%}
+    <tr>
+        <td>{{ C.commentTitle }}</td>
+        <td>{{ C.commentText }}</td>
+        
+    </tr>
+
+    {% endfor %}
+    
+</table>
+
+{% endblock %}
