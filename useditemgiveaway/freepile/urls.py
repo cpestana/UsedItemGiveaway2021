@@ -6,8 +6,8 @@ from django.conf.urls import include
 
 urlpatterns = [
 path('', views.index, name='index'), 
-path('Items/', views.Items, name='Item'), 
-path('Comments/', views.Comments, name='Comment'), 
+path('Item/', views.Items, name='Item'), 
+path('Comment/', views.Comments, name='Comment'), 
 path('newitem/', views.newitem, name='newitem'),
 path('newcomment/', views.newcomment, name='newcomment'),
 path('accounts/', include('django.contrib.auth.urls')), 

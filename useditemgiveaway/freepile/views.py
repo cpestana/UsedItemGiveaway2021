@@ -10,11 +10,11 @@ def index(request):
 
 def getItems(request, id):
     Items_list=get_object_or_404(Items, pk=id)
-    return render(request, 'freepile/items.html', {'Items_list': Items_list} )
+    return render(request, 'freepile/Item.html', {'Items_list': Items_list} )
 
 def getComments(request, id):
     Comments_list=Comments.objects.all()
-    return render(request, 'freepile/comments.html', {'Comments_list': Comments_list})
+    return render(request, 'freepile/Comment.html', {'Comments_list': Comments_list})
 
 @login_required
 def newitem(request):
