@@ -9,7 +9,7 @@
  {% for I in Items_list %}
     
  <tr>
- <td><a href="{% url 'Item' id=m.id %}">{{ i.itemName }}</a></td>
+ <td><a href="{% url 'Item' id=i.id %}">{{ i.itemName }}</a></td>
  <td>{{ i.itemDescription }}</td>
 </tr>
 {% endfor %}
