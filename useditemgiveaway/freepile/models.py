@@ -28,6 +28,6 @@ class Comment(models.Model):
         return self.commentTitle
     
     class Meta:
-        db_table='comments'
+        db_table='comment'
 
 
